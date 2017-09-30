@@ -77,7 +77,7 @@ var MisTabsPage = (function () {
 MisTabsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-mis-tabs',template:/*ion-inline-start:"/home/eduardo/Documentos/Proyecto Ing. Soft 2/misSitios/src/pages/mis-tabs/mis-tabs.html"*/'<ion-tabs>\n    <ion-tab [root]="inicioRoot" tabTitle="Inicio" tabIcon="home"></ion-tab>\n    <ion-tab [root]="listadoRoot" tabTitle="Listado" tabIcon="list-box"></ion-tab>\n    <ion-tab [root]="infoRoot" tabTitle="Info" tabIcon="information-circle"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/home/eduardo/Documentos/Proyecto Ing. Soft 2/misSitios/src/pages/mis-tabs/mis-tabs.html"*/
+        selector: 'page-mis-tabs',template:/*ion-inline-start:"/home/eduardo/Documentos/Proyecto Ing. Soft 2/GeoSite/src/pages/mis-tabs/mis-tabs.html"*/'<ion-tabs>\n    <ion-tab [root]="inicioRoot" tabTitle="Inicio" tabIcon="home"></ion-tab>\n    <ion-tab [root]="listadoRoot" tabTitle="Listado" tabIcon="list-box"></ion-tab>\n    <ion-tab [root]="infoRoot" tabTitle="Info" tabIcon="information-circle"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/home/eduardo/Documentos/Proyecto Ing. Soft 2/GeoSite/src/pages/mis-tabs/mis-tabs.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
 ], MisTabsPage);
