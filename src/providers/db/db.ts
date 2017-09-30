@@ -41,4 +41,9 @@ export class DbProvider {
     return this.db.executeSql(sql,[sitio.lat,sitio.lng,sitio.address,sitio.description,sitio.foto, sitio.id]);
   }
 
+  public borrarSitio(id){
+    let sql = "DELETE FROM sitios WHERE id= ? ";
+    return this.db.executeSql(sql,[id]);
+  }
+
 }
