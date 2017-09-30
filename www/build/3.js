@@ -29,7 +29,7 @@ ListadoPageModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__listado__["a" /* ListadoPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__listado__["a" /* ListadoPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__listado__["a" /* ListadoPage */]),
         ],
     })
 ], ListadoPageModule);
@@ -58,23 +58,52 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-/**
- * Generated class for the ListadoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 var ListadoPage = (function () {
-    function ListadoPage(navCtrl, navParams, db, modalCtrl) {
+    function ListadoPage(navCtrl, navParams, db, modalCtrl, alertCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.db = db;
         this.modalCtrl = modalCtrl;
+        this.alertCtrl = alertCtrl;
     }
     ListadoPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad ListadoPage');
     };
     ListadoPage.prototype.ionViewDidEnter = function () {
+        this.llenarArraySitios();
+    };
+    ListadoPage.prototype.muestraSitio = function (sitio) {
+        var modalSitio = this.modalCtrl.create('ModalDetalleSitioPage', sitio);
+        modalSitio.present();
+    };
+    ListadoPage.prototype.borrarSitio = function (id) {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Confirmar borrado',
+            message: '¿Estás seguro de que deseas eliminar este sitio?',
+            buttons: [
+                {
+                    text: 'No',
+                    role: 'cancel',
+                    handler: function () {
+                        // Ha respondido que no así que no hacemos nada
+                    }
+                },
+                {
+                    text: 'Si',
+                    handler: function () {
+                        _this.db.borrarSitio(id).then(function (res) {
+                            // Una vez borrado el sitio recargamos el listado
+                            _this.llenarArraySitios();
+                        }, function (err) { });
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    ListadoPage.prototype.llenarArraySitios = function () {
         var _this = this;
         this.db.getSitios().then(function (res) {
             _this.sitios = [];
@@ -90,21 +119,18 @@ var ListadoPage = (function () {
             }
         }, function (err) { });
     };
-    ListadoPage.prototype.muestraSitio = function (sitio) {
-        var modalSitio = this.modalCtrl.create('ModalDetalleSitioPage', sitio);
-        modalSitio.present();
-    };
     return ListadoPage;
 }());
 ListadoPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-listado',template:/*ion-inline-start:"/home/eduardo/Documentos/Proyecto Ing. Soft 2/GeoSite/src/pages/listado/listado.html"*/'<!--\n  Generated template for the ListadoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Listado</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n    <ion-item *ngFor="let sitio of sitios" (click)="muestraSitio(sitio)">\n      <ion-thumbnail item-left>\n        <img [src]="sitio.foto">\n      </ion-thumbnail>\n      <h2>{{ sitio.address }}</h2>\n      <p>{{ sitio.description }}</p>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/home/eduardo/Documentos/Proyecto Ing. Soft 2/GeoSite/src/pages/listado/listado.html"*/,
+        selector: 'page-listado',template:/*ion-inline-start:"/home/eduardo/Documentos/Proyecto Ing. Soft 2/GeoSite/src/pages/listado/listado.html"*/'<!--\n  Generated template for the ListadoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Listado</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n    <ion-item-sliding #item *ngFor="let sitio of sitios">\n      <ion-item (click)="muestraSitio(sitio)">\n        <ion-thumbnail item-left>\n          <img [src]="sitio.foto">\n        </ion-thumbnail>\n        <h2>{{ sitio.address }}</h2>\n        <p>{{ sitio.description }}</p>\n      </ion-item>\n\n      <ion-item-options side="right">\n          <button ion-button  color="danger" (click)="borrarSitio(sitio.id)"><ion-icon name="trash"></ion-icon>\n             Borrar\n          </button>\n      </ion-item-options>\n    </ion-item-sliding>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/home/eduardo/Documentos/Proyecto Ing. Soft 2/GeoSite/src/pages/listado/listado.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_2__providers_db_db__["a" /* DbProvider */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]])
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
 ], ListadoPage);
 
 //# sourceMappingURL=listado.js.map

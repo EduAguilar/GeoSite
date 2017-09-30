@@ -29,7 +29,7 @@ ModalNuevoSitioPageModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__modal_nuevo_sitio__["a" /* ModalNuevoSitioPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__modal_nuevo_sitio__["a" /* ModalNuevoSitioPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__modal_nuevo_sitio__["a" /* ModalNuevoSitioPage */]),
         ],
     })
 ], ModalNuevoSitioPageModule);
@@ -133,13 +133,13 @@ var ModalNuevoSitioPage = (function () {
     return ModalNuevoSitioPage;
 }());
 ModalNuevoSitioPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-modal-nuevo-sitio',template:/*ion-inline-start:"/home/eduardo/Documentos/Proyecto Ing. Soft 2/GeoSite/src/pages/modal-nuevo-sitio/modal-nuevo-sitio.html"*/'<!--\n  Generated template for the ModalNuevoSitioPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Nuevo Sitio</ion-title>\n\n    <ion-buttons start>\n      <button ion-button (click)="cerrarModal()">\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-card>\n    <ion-card-header>\n      Localización actual\n    </ion-card-header>\n    <ion-card-content>\n      <p><strong>lat:</strong>{{ coords.lat}}<br/>\n      <strong>lng:</strong>{{coords.lng }}</p>\n      <hr>\n      <p>{{ address }}</p>\n      <hr/>\n      <form (ngSubmit)="guardarSitio()">\n      <ion-item>\n        <img [src]="foto" *ngIf="foto" />\n        <button ion-button icon-left full type="button" (tap)="sacarFoto()">\n          Foto&nbsp;&nbsp;          \n          <ion-icon name="camera"></ion-icon>\n        </button>\n      </ion-item>\n      <hr/>\n      <ion-item>\n        <ion-label>Descripción</ion-label>\n       \n      </ion-item>\n      <ion-textarea [(ngModel)]="description" name="description"></ion-textarea>\n\n      <button ion-button type="submit" block>Guardar Sitio</button>\n    </form>\n      \n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"/home/eduardo/Documentos/Proyecto Ing. Soft 2/GeoSite/src/pages/modal-nuevo-sitio/modal-nuevo-sitio.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ViewController */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */],
         __WEBPACK_IMPORTED_MODULE_3__providers_db_db__["a" /* DbProvider */]])
 ], ModalNuevoSitioPage);

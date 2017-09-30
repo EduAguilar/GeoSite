@@ -29,7 +29,7 @@ ModalDetalleSitioPageModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__modal_detalle_sitio__["a" /* ModalDetalleSitioPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__modal_detalle_sitio__["a" /* ModalDetalleSitioPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__modal_detalle_sitio__["a" /* ModalDetalleSitioPage */]),
         ],
     })
 ], ModalDetalleSitioPageModule);
@@ -114,13 +114,13 @@ var ModalDetalleSitioPage = (function () {
     return ModalDetalleSitioPage;
 }());
 ModalDetalleSitioPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-modal-detalle-sitio',template:/*ion-inline-start:"/home/eduardo/Documentos/Proyecto Ing. Soft 2/GeoSite/src/pages/modal-detalle-sitio/modal-detalle-sitio.html"*/'<!--\n  Generated template for the ModalDetalleSitioPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{sitio.adress}}</ion-title>\n    <ion-buttons start>\n      <button ion-button (click)="cerrarModal()">\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-card *ngIf="!edit">\n    <img [src]="sitio.foto" *ngIf="sitio.foto" />\n    <ion-card-content>\n       <ion-item text-wrap>\n          <h2>{{ sitio.address }}</h2>\n           <p>{{ sitio.description }}</p>\n        </ion-item>\n    </ion-card-content>\n    <ion-row> \n      <ion-col text-center>\n         <button ion-button icon-left clear small (click)="comoLlegar()">\n           <ion-icon name="navigate"></ion-icon>\n           <div>Como llegar</div>\n         </button> \n      </ion-col> \n      <ion-col text-center>\n        <button ion-button icon-left clear small (click)="editar()">\n          <ion-icon name="editar"></ion-icon>\n          <div>Editar</div>\n        </button> \n     </ion-col>      \n    </ion-row>\n</ion-card>\n<ion-card *ngIf="edit">\n  <ion-card-content>\n  <form (ngSubmit)="guardarCambios()">\n  <ion-item>\n    <img [src]="sitio.foto" *ngIf="sitio.foto" />\n    <button ion-button icon-left full type="button" (tap)="sacarFoto()">\n      Foto&nbsp;&nbsp;          \n      <ion-icon name="camera"></ion-icon>\n    </button>\n  </ion-item>\n  <hr/>\n  <ion-item>\n    <ion-label>Descripción</ion-label>\n    <ion-textarea [(ngModel)]="sitio.description" name="description"></ion-textarea>\n  </ion-item>\n  <button ion-button type="submit" block>Actualizar Sitio</button>\n</form>\n</ion-card-content>\n</ion-card>\n</ion-content>\n'/*ion-inline-end:"/home/eduardo/Documentos/Proyecto Ing. Soft 2/GeoSite/src/pages/modal-detalle-sitio/modal-detalle-sitio.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ViewController */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_native_launch_navigator__["a" /* LaunchNavigator */],
         __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */],
         __WEBPACK_IMPORTED_MODULE_4__providers_db_db__["a" /* DbProvider */]])
